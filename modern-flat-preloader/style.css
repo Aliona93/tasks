@@ -1,0 +1,89 @@
+/* Color Theme Swatches in Hex */
+.Copy-of-Flat-Blue-1-hex { color: #3498DB; }
+.Copy-of-Flat-Blue-2-hex { color: #2980B9; }
+.Copy-of-Flat-Blue-3-hex { color: #BDC3C7; }
+.Copy-of-Flat-Blue-4-hex { color: #34495E; }
+.Copy-of-Flat-Blue-5-hex { color: #2C3E50; }
+
+body {
+    /*color variables*/
+    --bg-dark: #2C3E50;
+    --bg-light-dark: #34495E;
+    --bg-light:#BDC3C7;
+    --fg-dark:#2980B9;
+    --fg-light: #3498DB;
+    --bg-darker: rgb(20, 27, 34);
+
+    /*dimension variables*/
+    --size: 200px;
+
+    /*bg image variable*/
+    --bg-image: 25c98656.png;
+}
+
+body {
+    background-image: url(25c98656.png);
+    font-family: Arial, Helvetica, sans-serif;
+}
+#preloader {
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--bg-light-dark);
+    border-radius: var(--size);
+    box-shadow: inset 0 0 3px 1px var(--bg-darker);
+}
+#preloader .big {
+    width: calc(0.9*var(--size));
+    height: calc(0.9*var(--size));
+   
+    border-radius: calc(0.9*var(--size));
+    border: solid calc(0.02*var(--size)) var(--fg-light) /*transparent*/;
+    border-top-color: transparent;
+    transform: rotate(45deg);
+    animation: rotate-an 4s forwards infinite;
+}
+.center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+}
+#preloader .medium {
+    width: calc(0.8*var(--size));
+    height: calc(0.8*var(--size));
+    border-radius: calc(0.8*var(--size));
+    background-image: url(25c98656.png);
+    box-shadow: 0 0 3px 1px var(--bg-darker);
+    transform: rotate(-45deg);
+    animation: rotate-inverce 4s backwards infinite;
+}
+#preloader .small {
+    background-color: var(--bg-dark);
+    color: var(--fg-light);
+    font-size: calc((1/8)*var(--size));
+    text-align: center;
+    width: calc(0.25*var(--size));
+    height: 1.25em;
+    line-height: 1.25em;
+    
+}
+
+@keyframes rotate-an { 
+    
+    from { 
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(360deg);    }
+}
+@keyframes rotate-inverce { 
+    
+    from { 
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(-360deg);    }
+}
